@@ -71,7 +71,7 @@ function createFooter() {
       </div>
 
       <div class="footer-col">
-          <h3 class="footer-heading">Learn</h3>
+          <h3 class="footer-heading">Pages</h3>
           <ul class="footer-links" role="list">
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
