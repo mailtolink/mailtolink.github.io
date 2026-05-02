@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mailto Link Generator – Free HTML Email Hyperlink Creator | mailtolink.github.io</title>
+  <meta name="description" content="Free Mailto Link Generator — create HTML email hyperlinks instantly. Build mailto links with subject, CC, BCC, and body. Generate mailto HTML code in one click."/>
+  <meta name="keywords" content="mailto html, email link html, mailto hyperlink, html email hyperlink, hyperlink for email html, mail to link, mailto link generator, mailto url, create mailto link, mailto link with subject, html mailto tag, email link html code, make a mailto link, mailto email link"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://mailtolink.github.io/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mailto Link Generator – Free HTML Email Hyperlink Creator"/>
+  <meta property="og:description" content="Generate mailto HTML email links with subject, CC, BCC & body instantly. Free, no signup."/>
+  <meta property="og:url" content="https://mailtolink.github.io/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="https://mailtolink.github.io/og-image.png"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Mailto Link Generator – Free HTML Email Hyperlink Creator"/>
+  <meta name="twitter:description" content="Build mailto links with subject, CC, BCC & body. Free tool."/>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://mailtolink.github.io/#website",
+        "url": "https://mailtolink.github.io/",
+        "name": "MailToLink – Mailto Link Generator",
+        "description": "Free online mailto link generator for creating HTML email hyperlinks.",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://mailtolink.github.io/#app",
+        "name": "Mailto Link Generator",
+        "url": "https://mailtolink.github.io/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Generate mailto HTML links with subject, CC, BCC, and body fields. Free and instant.",
+        "featureList": [
+          "Mailto link with subject",
+          "CC and BCC support",
+          "Custom body text",
+          "Live preview",
+          "One-click copy",
+          "HTML email hyperlink code output"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://mailtolink.github.io/#faqpage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a mailto link?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A mailto link is an HTML hyperlink using the mailto: protocol that opens the user's default email client when clicked, pre-filled with the recipient, subject, and body you specify."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I create a mailto link in HTML?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the anchor tag: <a href=\"mailto:email@example.com?subject=Hello&body=Hi there\">Contact Us</a>. Our free mailto link generator builds this code automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I add a subject to a mailto link?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Add ?subject=Your Subject after the email address in the mailto URL. Our tool lets you enter a subject and generates the properly encoded link."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this mailto link generator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "100% free. No signup, no account, no limits. Generate as many mailto links as you need."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --orange: #FF6B35;
+      --orange-light: #FF8C5A;
+      --amber: #F7931E;
+      --yellow: #FFD166;
+      --teal: #06D6A0;
+      --teal-dark: #04A07A;
+      --navy: #1A1F3A;
+      --navy-light: #252B4A;
+      --cream: #FFF8F0;
+      --cream-dark: #FFF0E0;
+      --white: #FFFFFF;
+      --text-dark: #1A1F3A;
+      --text-mid: #4A5268;
+      --text-light: #8892AA;
+      --border: #E8EDF5;
+      --shadow-sm: 0 2px 8px rgba(26,31,58,0.08);
+      --shadow-md: 0 8px 32px rgba(26,31,58,0.12);
+      --shadow-lg: 0 24px 64px rgba(26,31,58,0.16);
+      --shadow-orange: 0 8px 32px rgba(255,107,53,0.3);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --font-display: 'Cabinet Grotesk', sans-serif;
+      --font-serif: 'Fraunces', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --footer-bg: #1A1F3A;
+      --transition: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-display);
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: var(--font-display); }
+    input, textarea, select { font-family: var(--font-display); }
+
+    /* ===== HEADER ===== */
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .navbar {
+      padding: 16px 0;
+      transition: all 0.3s ease;
+    }
+    #site-header.scrolled .navbar {
+      background: rgba(255,248,240,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-md);
+      padding: 10px 0;
+    }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { flex-shrink: 0; }
+    .logo-text {
+      font-size: 1.25rem; font-weight: 700; color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+    .logo-text strong { color: var(--orange); }
+    .nav-links {
+      display: flex; align-items: center; gap: 8px;
+      transition: all 0.3s ease;
+    }
+    .nav-link {
+      padding: 8px 14px; border-radius: 20px; font-size: 0.9rem;
+      font-weight: 500; color: var(--text-mid);
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: var(--cream-dark); color: var(--orange);
+    }
+    .nav-cta {
+      padding: 9px 20px; border-radius: 20px;
+      background: var(--orange); color: white;
+      font-weight: 700; font-size: 0.9rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(255,107,53,0.35);
+    }
+    .nav-cta:hover {
+      background: var(--orange-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255,107,53,0.45);
+    }
+    .nav-toggle {
+      display: none; background: none;
+      flex-direction: column; gap: 5px; padding: 4px;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text-dark); border-radius: 2px;
+      transition: all 0.3s ease; transform-origin: center;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ===== HERO SECTION ===== */
+    #hero {
+      min-height: 100vh;
+      padding: 140px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      display: flex; align-items: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(135deg, #FFF8F0 0%, #FFE8D0 40%, #FFF0E8 100%);
+    }
+    .hero-orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: 0.5;
+      animation: floatOrb 8s ease-in-out infinite;
+    }
+    .hero-orb-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(255,107,53,0.3), transparent);
+      top: -100px; right: -100px;
+      animation-delay: 0s;
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(247,147,30,0.25), transparent);
+      bottom: -80px; left: -80px;
+      animation-delay: -3s;
+    }
+    .hero-orb-3 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(6,214,160,0.2), transparent);
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      animation-delay: -5s;
+    }
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .hero-text { animation: fadeUp 0.8s ease both; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.25);
+      color: var(--orange); padding: 6px 14px; border-radius: 20px;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.03em;
+      text-transform: uppercase; margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: ''; display: block; width: 6px; height: 6px;
+      background: var(--orange); border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.5); }
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900; line-height: 1.1; letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero-title .highlight {
+      color: var(--orange);
+      font-style: italic; font-family: var(--font-serif);
+    }
+    .hero-subtitle {
+      font-size: 1.15rem; color: var(--text-mid); line-height: 1.7;
+      margin-bottom: 32px; max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: white;
+      padding: 14px 28px; border-radius: 50px;
+      font-weight: 800; font-size: 1rem;
+      box-shadow: var(--shadow-orange);
+      transition: all 0.25s var(--transition);
+    }
+    .btn-primary:hover {
+      background: var(--orange-light); transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(255,107,53,0.45);
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; color: var(--text-dark);
+      padding: 14px 28px; border-radius: 50px;
+      font-weight: 700; font-size: 1rem;
+      border: 2px solid var(--border);
+      transition: all 0.25s ease;
+    }
+    .btn-secondary:hover {
+      border-color: var(--orange); color: var(--orange);
+      transform: translateY(-2px);
+    }
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 36px;
+    }
+    .hero-stat { text-align: left; }
+    .hero-stat .num {
+      font-size: 1.8rem; font-weight: 900;
+      color: var(--orange); line-height: 1;
+    }
+    .hero-stat .label {
+      font-size: 0.82rem; color: var(--text-light); margin-top: 2px;
+    }
+    .hero-visual {
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero-card {
+      background: white; border-radius: var(--radius-lg);
+      padding: 28px; box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .hero-card-label {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 16px;
+    }
+    .hero-code-block {
+      background: var(--navy);
+      border-radius: var(--radius-md); padding: 20px;
+      margin-bottom: 16px; overflow-x: auto;
+    }
+    .hero-code-block code {
+      font-family: var(--font-mono); font-size: 0.85rem;
+      color: #E8F4FD; line-height: 1.6;
+      white-space: pre;
+    }
+    .code-tag { color: #FF8C5A; }
+    .code-attr { color: #FFD166; }
+    .code-val { color: #06D6A0; }
+    .code-text { color: #E8F4FD; }
+    .hero-card-preview {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--cream); padding: 14px 16px;
+      border-radius: var(--radius-md); border: 1px solid var(--border);
+    }
+    .preview-link {
+      color: var(--orange); text-decoration: underline;
+      font-weight: 600; font-size: 0.95rem;
+    }
+    .preview-badge {
+      margin-left: auto; background: rgba(6,214,160,0.1);
+      color: var(--teal-dark); padding: 4px 10px;
+      border-radius: 12px; font-size: 0.75rem; font-weight: 700;
+    }
+    .hero-card-dots {
+      position: absolute; top: 20px; left: 24px;
+      display: flex; gap: 6px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #FF6B6B; }
+    .dot-yellow { background: #FFD166; }
+    .dot-green { background: #06D6A0; }
+
+    /* ===== SECTIONS COMMON ===== */
+    section { padding: 96px 24px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block; background: rgba(255,107,53,0.08);
+      color: var(--orange); padding: 5px 14px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 900; line-height: 1.15; letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 1.05rem; color: var(--text-mid); max-width: 560px; line-height: 1.7;
+    }
+    .section-header { margin-bottom: 56px; }
+    .section-header.centered { text-align: center; }
+    .section-header.centered .section-subtitle { margin: 0 auto; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== GENERATOR SECTION ===== */
+    #generator { background: white; }
+    .generator-wrapper {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+    }
+    .gen-form-card {
+      background: var(--cream); border-radius: var(--radius-lg);
+      padding: 32px; border: 1px solid var(--border);
+    }
+    .gen-form-title {
+      font-size: 1.2rem; font-weight: 800; margin-bottom: 24px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .gen-form-title svg { color: var(--orange); }
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block; font-size: 0.85rem; font-weight: 700;
+      color: var(--text-mid); margin-bottom: 6px; letter-spacing: 0.02em;
+    }
+    .form-label span { color: var(--orange); }
+    .form-control {
+      width: 100%; padding: 11px 14px;
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      font-size: 0.95rem; color: var(--text-dark);
+      background: white; transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-control:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(255,107,53,0.12);
+    }
+    .form-control::placeholder { color: var(--text-light); }
+    textarea.form-control { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .link-text-wrapper {
+      position: relative;
+    }
+    .char-count {
+      position: absolute; right: 10px; bottom: 10px;
+      font-size: 0.72rem; color: var(--text-light);
+    }
+    .gen-divider {
+      border: none; border-top: 1px dashed var(--border);
+      margin: 20px 0;
+    }
+    .gen-label-row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 6px;
+    }
+    .optional-badge {
+      font-size: 0.68rem; background: var(--border);
+      color: var(--text-light); padding: 2px 7px; border-radius: 8px;
+      font-weight: 600;
+    }
+    .btn-generate {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      color: white; border-radius: var(--radius-md);
+      font-size: 1.05rem; font-weight: 800;
+      letter-spacing: -0.01em;
+      box-shadow: var(--shadow-orange);
+      transition: all 0.25s var(--transition);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-generate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(255,107,53,0.45);
+    }
+    .btn-generate:active { transform: translateY(0); }
+
+    /* Output Card */
+    .gen-output-card {
+      border-radius: var(--radius-lg); padding: 32px;
+      border: 1px solid var(--border);
+      background: white;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+    .output-section { }
+    .output-label {
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 10px;
+    }
+    .code-block {
+      background: var(--navy); border-radius: var(--radius-md);
+      padding: 16px 18px; overflow-x: auto; position: relative;
+    }
+    .code-block code {
+      font-family: var(--font-mono); font-size: 0.82rem;
+      color: #E8F4FD; line-height: 1.7; word-break: break-all;
+      display: block;
+    }
+    .copy-btn {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 5px 12px; border-radius: 8px; font-size: 0.75rem;
+      font-weight: 600; transition: all 0.2s ease;
+    }
+    .copy-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+    .copy-btn.copied { background: rgba(6,214,160,0.3); color: #06D6A0; border-color: rgba(6,214,160,0.4); }
+    .preview-box {
+      background: var(--cream); border-radius: var(--radius-md);
+      padding: 16px 18px; border: 1px dashed var(--border);
+      min-height: 52px; display: flex; align-items: center;
+    }
+    .preview-box a { color: var(--orange); text-decoration: underline; font-weight: 600; }
+    .preview-placeholder {
+      color: var(--text-light); font-size: 0.9rem; font-style: italic;
+    }
+    .mailto-url-block {
+      background: var(--cream-dark); border-radius: var(--radius-md);
+      padding: 14px 16px; border: 1px solid rgba(255,107,53,0.15);
+    }
+    .mailto-url-block code {
+      font-family: var(--font-mono); font-size: 0.8rem;
+      color: var(--orange); word-break: break-all;
+    }
+    .output-actions { display: flex; gap: 10px; }
+    .btn-copy-html, .btn-copy-url {
+      flex: 1; padding: 11px;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem; font-weight: 700;
+      transition: all 0.2s var(--transition);
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .btn-copy-html {
+      background: var(--orange); color: white;
+      box-shadow: 0 4px 14px rgba(255,107,53,0.3);
+    }
+    .btn-copy-html:hover { background: var(--orange-light); transform: translateY(-1px); }
+    .btn-copy-url {
+      background: var(--cream); color: var(--text-dark);
+      border: 1.5px solid var(--border);
+    }
+    .btn-copy-url:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
+    .btn-copy-html.copied, .btn-copy-url.copied { background: var(--teal); color: white; border-color: var(--teal); }
+    .gen-tips {
+      background: var(--cream); border-radius: var(--radius-md);
+      padding: 16px 18px; border: 1px solid var(--border);
+    }
+    .gen-tips-title {
+      font-size: 0.82rem; font-weight: 800; color: var(--text-mid);
+      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;
+    }
+    .gen-tips ul { display: flex; flex-direction: column; gap: 6px; }
+    .gen-tips li {
+      font-size: 0.85rem; color: var(--text-mid);
+      display: flex; align-items: flex-start; gap: 7px;
+    }
+    .gen-tips li::before {
+      content: '→'; color: var(--orange); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+    .validation-msg {
+      font-size: 0.8rem; margin-top: 5px; padding: 5px 10px;
+      border-radius: 6px; display: none;
+    }
+    .validation-msg.error { background: rgba(255,107,107,0.1); color: #D93B3B; display: block; }
+    .validation-msg.success { background: rgba(6,214,160,0.1); color: var(--teal-dark); display: block; }
+
+    /* ===== HOW IT WORKS ===== */
+    #how-it-works { background: var(--cream); }
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    .step-card {
+      background: white; border-radius: var(--radius-lg);
+      padding: 28px; border: 1px solid var(--border);
+      position: relative; overflow: hidden;
+      transition: transform 0.25s var(--transition), box-shadow 0.25s ease;
+    }
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .step-number {
+      font-family: var(--font-serif); font-size: 4rem;
+      font-weight: 600; color: rgba(255,107,53,0.08);
+      line-height: 1; position: absolute; top: 12px; right: 20px;
+      letter-spacing: -0.04em;
+    }
+    .step-icon {
+      width: 52px; height: 52px; border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--orange), var(--amber));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px; font-size: 1.5rem;
+    }
+    .step-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; }
+    .step-desc { font-size: 0.92rem; color: var(--text-mid); line-height: 1.65; }
+
+    /* ===== FEATURES ===== */
+    #features { background: white; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .feature-card {
+      padding: 28px; border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border); background: var(--cream);
+      transition: all 0.25s var(--transition);
+    }
+    .feature-card:hover {
+      border-color: var(--orange);
+      background: white;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .feature-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: rgba(255,107,53,0.1); display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; margin-bottom: 16px;
+    }
+    .feature-title { font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+    .feature-desc { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+
+    /* ===== EXAMPLES ===== */
+    #examples { background: var(--cream); }
+    .examples-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .example-card {
+      background: white; border-radius: var(--radius-lg);
+      border: 1px solid var(--border); overflow: hidden;
+      transition: transform 0.25s var(--transition), box-shadow 0.25s ease;
+    }
+    .example-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .example-card-head {
+      padding: 18px 22px 0;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .example-title { font-size: 0.95rem; font-weight: 800; }
+    .example-tag {
+      background: rgba(255,107,53,0.1); color: var(--orange);
+      padding: 3px 10px; border-radius: 12px; font-size: 0.73rem; font-weight: 700;
+    }
+    .example-code {
+      background: var(--navy); margin: 14px; border-radius: var(--radius-md);
+      padding: 14px 16px; overflow-x: auto;
+    }
+    .example-code code {
+      font-family: var(--font-mono); font-size: 0.78rem;
+      color: #E8F4FD; line-height: 1.6; white-space: pre;
+    }
+    .example-preview {
+      padding: 12px 22px 18px;
+      font-size: 0.88rem; color: var(--text-mid);
+    }
+    .example-preview a {
+      color: var(--orange); text-decoration: underline; font-weight: 600;
+    }
+    .example-copy-btn {
+      margin: 0 22px 16px; width: calc(100% - 44px);
+      padding: 9px; border-radius: var(--radius-sm);
+      background: var(--cream); border: 1.5px solid var(--border);
+      font-size: 0.82rem; font-weight: 700; color: var(--text-mid);
+      transition: all 0.2s ease;
+    }
+    .example-copy-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* ===== USE CASES ===== */
+    #use-cases { background: white; }
+    .use-cases-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .use-case-card {
+      background: var(--cream); border-radius: var(--radius-lg);
+      padding: 24px; border: 1px solid var(--border);
+      transition: all 0.25s var(--transition);
+    }
+    .use-case-card:hover {
+      background: var(--orange); color: white;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-orange);
+    }
+    .use-case-card:hover .use-case-desc { color: rgba(255,255,255,0.8); }
+    .use-case-emoji { font-size: 2rem; margin-bottom: 12px; }
+    .use-case-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; }
+    .use-case-desc { font-size: 0.84rem; color: var(--text-mid); line-height: 1.55; }
+
+    /* ===== SEO CONTENT ===== */
+    #seo-content { background: var(--cream); }
+    .seo-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+    }
+    .seo-text h3 {
+      font-size: 1.5rem; font-weight: 900; margin-bottom: 14px; letter-spacing: -0.02em;
+    }
+    .seo-text p {
+      font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 14px;
+    }
+    .seo-text code {
+      font-family: var(--font-mono); font-size: 0.85em;
+      background: rgba(255,107,53,0.1); color: var(--orange);
+      padding: 2px 6px; border-radius: 4px;
+    }
+    .seo-text ul { margin: 12px 0 14px 0; display: flex; flex-direction: column; gap: 7px; }
+    .seo-text li {
+      font-size: 0.93rem; color: var(--text-mid);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .seo-text li::before { content: '✓'; color: var(--teal-dark); font-weight: 700; flex-shrink: 0; }
+    .seo-visual {
+      background: var(--navy); border-radius: var(--radius-lg);
+      padding: 28px; position: sticky; top: 100px;
+    }
+    .seo-visual-title {
+      color: rgba(255,255,255,0.5); font-size: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;
+    }
+    .seo-visual code {
+      font-family: var(--font-mono); font-size: 0.82rem;
+      line-height: 1.8; color: #E8F4FD; display: block;
+    }
+    .seo-visual .kw { color: #FF8C5A; }
+    .seo-visual .str { color: #06D6A0; }
+    .seo-visual .txt { color: #FFD166; }
+    .seo-visual .cmt { color: rgba(232,244,253,0.35); font-style: italic; }
+
+    /* ===== FAQ ===== */
+    #faq { background: white; }
+    .faq-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    }
+    .faq-item {
+      background: var(--cream); border-radius: var(--radius-md);
+      border: 1px solid var(--border); overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; padding: 18px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: none; text-align: left;
+      font-size: 0.95rem; font-weight: 700; color: var(--text-dark);
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--orange); }
+    .faq-chevron {
+      width: 20px; height: 20px; flex-shrink: 0;
+      background: rgba(255,107,53,0.1); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease;
+      font-size: 0.7rem; color: var(--orange);
+    }
+    .faq-item.open .faq-chevron { background: var(--orange); color: white; transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 20px 18px;
+      font-size: 0.9rem; color: var(--text-mid); line-height: 1.7;
+    }
+    .faq-answer-inner code {
+      font-family: var(--font-mono); font-size: 0.82em;
+      background: rgba(255,107,53,0.1); color: var(--orange);
+      padding: 2px 6px; border-radius: 4px;
+    }
+    .faq-item.open .faq-answer { max-height: 400px; }
+
+    /* ===== CTA SECTION ===== */
+    #cta {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 96px 24px;
+      position: relative; overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,107,53,0.15), transparent),
+        radial-gradient(ellipse 50% 60% at 20% 60%, rgba(6,214,160,0.1), transparent);
+    }
+    .cta-content {
+      position: relative; z-index: 1;
+      text-align: center; max-width: 640px; margin: 0 auto;
+    }
+    .cta-title {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+      color: white; line-height: 1.15; letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .cta-title em { color: var(--yellow); font-style: italic; font-family: var(--font-serif); }
+    .cta-subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 36px; }
+    .cta-form {
+      display: flex; gap: 10px; max-width: 480px; margin: 0 auto 24px;
+    }
+    .cta-input {
+      flex: 1; padding: 14px 18px;
+      border-radius: 50px; border: 2px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.1);
+      color: white; font-size: 0.95rem;
+      outline: none; transition: border-color 0.2s;
+    }
+    .cta-input::placeholder { color: rgba(255,255,255,0.4); }
+    .cta-input:focus { border-color: var(--orange); }
+    .cta-btn {
+      padding: 14px 28px; border-radius: 50px;
+      background: var(--orange); color: white;
+      font-weight: 800; font-size: 0.95rem;
+      box-shadow: 0 4px 18px rgba(255,107,53,0.4);
+      transition: all 0.25s var(--transition); white-space: nowrap;
+    }
+    .cta-btn:hover { background: var(--orange-light); transform: translateY(-2px); }
+    .cta-result {
+      background: rgba(255,255,255,0.1); border-radius: var(--radius-md);
+      padding: 14px 18px; margin-top: 16px;
+      font-family: var(--font-mono); font-size: 0.82rem;
+      color: var(--yellow); word-break: break-all;
+      display: none;
+    }
+    .cta-result.show { display: block; }
+    .cta-note {
+      font-size: 0.82rem; color: rgba(255,255,255,0.4);
+    }
+
+    /* ===== FOOTER ===== */
+    #site-footer { background: var(--footer-bg); color: rgba(255,255,255,0.75); }
+    .footer-wave { line-height: 0; overflow: hidden; height: 60px; }
+    .footer-wave svg { display: block; }
+    .footer-body { padding: 60px 24px 36px; max-width: 1200px; margin: 0 auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-logo .logo-text { color: white; }
+    .footer-tagline { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.65; margin: 14px 0 16px; }
+    .footer-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge {
+      background: rgba(255,107,53,0.15); color: var(--orange);
+      border: 1px solid rgba(255,107,53,0.3);
+      padding: 4px 10px; border-radius: 12px; font-size: 0.72rem; font-weight: 700;
+    }
+    .footer-heading {
+      font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 16px;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 0.87rem; color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-quick p { font-size: 0.87rem; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+    .footer-quick-form { display: flex; gap: 8px; }
+    .footer-quick-form input {
+      flex: 1; padding: 9px 12px; border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: white; font-size: 0.85rem; outline: none;
+    }
+    .footer-quick-form input:focus { border-color: var(--orange); }
+    .footer-quick-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .footer-quick-form button {
+      padding: 9px 16px; border-radius: var(--radius-sm);
+      background: var(--orange); color: white;
+      font-size: 0.82rem; font-weight: 700;
+      transition: background 0.2s;
+    }
+    .footer-quick-form button:hover { background: var(--orange-light); }
+    .footer-quick-result { margin-top: 10px; font-size: 0.8rem; }
+    .footer-quick-result code {
+      font-family: var(--font-mono); color: var(--yellow);
+      word-break: break-all; display: block; margin-bottom: 6px;
+    }
+    .copy-btn-small {
+      background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 3px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 600;
+    }
+    .copy-btn-small.copied { background: rgba(6,214,160,0.2); color: var(--teal); }
+    .footer-quick-result .error { color: #FF8C8C; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.45); }
+    .footer-copy a { color: var(--orange); }
+    .footer-legal { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    /* ===== SCROLL TO TOP ===== */
+    #scrollTop {
+      position: fixed; bottom: 28px; right: 28px; z-index: 900;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--orange); color: white;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(255,107,53,0.4);
+      opacity: 0; pointer-events: none;
+      transition: all 0.3s var(--transition);
+      font-size: 1.1rem;
+    }
+    #scrollTop.show { opacity: 1; pointer-events: all; }
+    #scrollTop:hover { transform: translateY(-3px); }
+
+    /* ===== TOAST ===== */
+    #toast {
+      position: fixed; bottom: 80px; right: 28px; z-index: 1000;
+      background: var(--navy); color: white;
+      padding: 12px 20px; border-radius: var(--radius-md);
+      font-size: 0.88rem; font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(20px); opacity: 0;
+      transition: all 0.3s var(--transition);
+      border-left: 3px solid var(--teal);
+      pointer-events: none;
+    }
+    #toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { order: -1; }
+      .generator-wrapper { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .use-cases-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 64px 20px; }
+      .nav-links {
+        display: none; position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(255,248,240,0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column; padding: 16px 24px 24px;
+        gap: 4px; border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+      }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+      .navbar { position: relative; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .examples-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .use-cases-grid { grid-template-columns: 1fr 1fr; }
+      .seo-grid { grid-template-columns: 1fr; }
+      .cta-form { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-stats { gap: 20px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .use-cases-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header injected by header.js -->
+
+<!-- ===== HERO ===== -->
+<section id="hero" aria-label="Mailto Link Generator Hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">Free Online Tool · No Signup Needed</div>
+      <h1 class="hero-title">
+        The Easiest<br/><em class="highlight">Mailto Link</em><br/>Generator
+      </h1>
+      <p class="hero-subtitle">
+        Create HTML email hyperlinks instantly. Build <strong>mailto links with subject</strong>, CC, BCC, and body text in seconds — perfect for developers, designers, and marketers.
+      </p>
+      <div class="hero-actions">
+        <a href="#generator" class="btn-primary">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M3 8l9 6 9-6" /><rect x="3" y="6" width="18" height="14" rx="2"/></svg>
+          Generate Mailto Link
+        </a>
+        <a href="#how-it-works" class="btn-secondary">
+          See How It Works
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">∞</div><div class="label">Free Uses</div></div>
+        <div class="hero-stat"><div class="num">5</div><div class="label">Field Options</div></div>
+        <div class="hero-stat"><div class="num">1-click</div><div class="label">Copy Code</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="hero-card-label" style="margin-top:8px">Generated HTML Email Hyperlink</div>
+        <div class="hero-code-block">
+          <code><span class="code-tag">&lt;a</span> <span class="code-attr">href</span><span class="code-text">=</span><span class="code-val">"mailto:hello@company.com</span>
+<span class="code-val">  ?subject=Project%20Inquiry</span>
+<span class="code-val">  &amp;body=Hi%20there%2C"</span><span class="code-tag">&gt;</span>
+  <span class="code-text">Contact Our Team</span>
+<span class="code-tag">&lt;/a&gt;</span></code>
+        </div>
+        <div class="hero-card-preview">
+          <a href="mailto:hello@company.com?subject=Project%20Inquiry" class="preview-link">Contact Our Team</a>
+          <span class="preview-badge">Live Preview</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GENERATOR ===== -->
+<section id="generator" aria-label="Mailto Link Generator Tool">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Free Tool</span>
+      <h2 class="section-title">Mailto Link Generator</h2>
+      <p class="section-subtitle">Fill in the fields below to create your mailto HTML link. All fields except the email address are optional.</p>
+    </div>
+    <div class="generator-wrapper">
+      <!-- Input Form -->
+      <div class="gen-form-card reveal">
+        <div class="gen-form-title">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="var(--orange)" stroke-width="2"><path d="M3 8l9 6 9-6"/><rect x="3" y="6" width="18" height="14" rx="2"/></svg>
+          Build Your Mailto Link
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="toEmail">To Email <span>*</span></label>
+          <input type="email" id="toEmail" class="form-control" placeholder="recipient@example.com" aria-required="true" autocomplete="off"/>
+          <div class="validation-msg" id="emailValidation"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="linkText">Link Display Text <span>*</span></label>
+          <div class="link-text-wrapper">
+            <input type="text" id="linkText" class="form-control" placeholder="e.g. Contact Us, Send Email, Get in Touch" maxlength="80"/>
+            <span class="char-count" id="charCount">0/80</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="subject">
+            <div class="gen-label-row">Subject <span class="optional-badge">Optional</span></div>
+          </label>
+          <input type="text" id="subject" class="form-control" placeholder="e.g. Project Inquiry, Hello from your site"/>
+        </div>
+
+        <hr class="gen-divider"/>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ccEmail">
+              <div class="gen-label-row">CC <span class="optional-badge">Optional</span></div>
+            </label>
+            <input type="email" id="ccEmail" class="form-control" placeholder="cc@example.com"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bccEmail">
+              <div class="gen-label-row">BCC <span class="optional-badge">Optional</span></div>
+            </label>
+            <input type="email" id="bccEmail" class="form-control" placeholder="bcc@example.com"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="bodyText">
+            <div class="gen-label-row">Email Body <span class="optional-badge">Optional</span></div>
+          </label>
+          <textarea id="bodyText" class="form-control" placeholder="Pre-fill the email body text here..."></textarea>
+        </div>
+
+        <button id="generateBtn" class="btn-generate" type="button">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Generate Mailto Link
+        </button>
+
+        <div class="gen-tips" style="margin-top:16px">
+          <div class="gen-tips-title">💡 Pro Tips</div>
+          <ul>
+            <li>Use a subject to increase email open rates</li>
+            <li>BCC yourself to track outreach links</li>
+            <li>Body text helps people get started quickly</li>
+            <li>Test your mailto link before publishing</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Output -->
+      <div class="gen-output-card reveal">
+        <div class="output-section">
+          <div class="output-label">HTML Email Hyperlink Code</div>
+          <div class="code-block" id="htmlOutput">
+            <code id="htmlCode"><span style="color:rgba(232,244,253,0.3);font-style:italic">// Your mailto HTML code will appear here...</span></code>
+            <button class="copy-btn" id="copyHtmlBtn" onclick="copyOutput('html')" style="display:none" aria-label="Copy HTML code">Copy</button>
+          </div>
+        </div>
+
+        <div class="output-section">
+          <div class="output-label">Link Preview</div>
+          <div class="preview-box" id="previewBox">
+            <span class="preview-placeholder">Your live email link preview will appear here</span>
+          </div>
+        </div>
+
+        <div class="output-section">
+          <div class="output-label">Mailto URL Only</div>
+          <div class="mailto-url-block" id="urlOutput">
+            <code id="urlCode" style="color:rgba(26,31,58,0.4);font-style:italic">Your mailto URL will appear here...</code>
+          </div>
+        </div>
+
+        <div class="output-actions">
+          <button class="btn-copy-html" id="copyHtmlBig" type="button">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy HTML Code
+          </button>
+          <button class="btn-copy-url" id="copyUrlBig" type="button">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            Copy URL
+          </button>
+        </div>
+
+        <!-- Reset -->
+        <button id="resetBtn" type="button" style="width:100%;padding:10px;border-radius:var(--radius-md);background:none;border:1.5px dashed var(--border);color:var(--text-light);font-size:0.85rem;font-weight:600;transition:all 0.2s ease;">
+          Reset Form
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how-it-works" aria-labelledby="how-title">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="section-tag">Simple Process</span>
+      <h2 class="section-title" id="how-title">How to Make a Mailto Link</h2>
+      <p class="section-subtitle">Creating an HTML email hyperlink takes just three steps. No coding knowledge required.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-number">01</div>
+        <div class="step-icon">📧</div>
+        <h3 class="step-title">Enter Your Email</h3>
+        <p class="step-desc">Type the recipient's email address into the "To Email" field. This is the only required field to create a basic <strong>mailto hyperlink</strong> in HTML. Add a display text like "Email Us" or "Contact Us".</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-number">02</div>
+        <div class="step-icon">⚙️</div>
+        <h3 class="step-title">Add Optional Fields</h3>
+        <p class="step-desc">Optionally add a <strong>mailto link subject</strong>, CC, BCC, and email body text. All fields are automatically URL-encoded so your <strong>mailto URL</strong> works correctly across all browsers and email clients.</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-number">03</div>
+        <div class="step-icon">📋</div>
+        <h3 class="step-title">Copy & Paste HTML</h3>
+        <p class="step-desc">Click "Generate" and copy your ready-to-use <strong>email link HTML code</strong>. Paste it directly into your website, landing page, or email template. Your <strong>HTML mailto tag</strong> is ready to go.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section id="features" aria-labelledby="features-title">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="section-tag">Why Use Our Tool</span>
+      <h2 class="section-title" id="features-title">Advanced Features</h2>
+      <p class="section-subtitle">Everything you need to create perfect mailto links for any web project.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">Instant Generation</h3>
+        <p class="feature-desc">Generate your <strong>mailto link HTML</strong> in real time as you type. No page reloads, no waiting. Your HTML email hyperlink is ready the moment you click generate.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔗</div>
+        <h3 class="feature-title">Full Mailto URL Builder</h3>
+        <p class="feature-desc">Build complete <strong>mailto URLs</strong> with all parameters: to, subject, cc, bcc, and body. All special characters are properly encoded for cross-browser compatibility.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">👁️</div>
+        <h3 class="feature-title">Live Preview</h3>
+        <p class="feature-desc">See your <strong>mailto email link</strong> rendered in real time before you copy it. Click the preview to test that it opens your email client correctly.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📱</div>
+        <h3 class="feature-title">Mobile Compatible</h3>
+        <p class="feature-desc">Generated <strong>mailto hyperlinks</strong> work on iOS and Android. Tapping a mailto link on mobile opens the native mail app — perfect for contact pages.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🎨</div>
+        <h3 class="feature-title">Custom Link Text</h3>
+        <p class="feature-desc">Set any display text for your <strong>hyperlink for email HTML</strong>. Use "Contact Us", "Send Us a Message", "Email Our Team", or any custom call-to-action text.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔒</div>
+        <h3 class="feature-title">Private & Secure</h3>
+        <p class="feature-desc">All processing happens in your browser. No emails or data are stored or sent to any server. Your information stays completely private.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXAMPLES ===== -->
+<section id="examples" aria-labelledby="examples-title">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="section-tag">Ready to Use</span>
+      <h2 class="section-title" id="examples-title">Mailto Link Examples</h2>
+      <p class="section-subtitle">Copy these real-world <strong>mailto HTML</strong> examples for common use cases. Click any example to copy the code.</p>
+    </div>
+    <div class="examples-grid" id="examplesGrid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== USE CASES ===== -->
+<section id="use-cases" aria-labelledby="usecases-title">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="section-tag">Who Uses It</span>
+      <h2 class="section-title" id="usecases-title">Perfect for Every Project</h2>
+      <p class="section-subtitle">Our <strong>mail to link generator</strong> is used by professionals across all industries and project types.</p>
+    </div>
+    <div class="use-cases-grid">
+      <div class="use-case-card reveal">
+        <div class="use-case-emoji">💼</div>
+        <h3 class="use-case-title">Business Websites</h3>
+        <p class="use-case-desc">Add professional <strong>email link HTML</strong> to your contact page, about page, or footer so clients can reach you instantly.</p>
+      </div>
+      <div class="use-case-card reveal">
+        <div class="use-case-emoji">🛍️</div>
+        <h3 class="use-case-title">E-Commerce</h3>
+        <p class="use-case-desc">Create support and inquiry <strong>mailto links</strong> with pre-filled subject lines for order issues, returns, and product questions.</p>
+      </div>
+      <div class="use-case-card reveal">
+        <div class="use-case-emoji">🧑‍💻</div>
+        <h3 class="use-case-title">Developers</h3>
+        <p class="use-case-desc">Quickly generate correct <strong>HTML mailto tags</strong> and test them without memorising URL encoding rules or mailto syntax.</p>
+      </div>
+      <div class="use-case-card reveal">
+        <div class="use-case-emoji">✉️</div>
+        <h3 class="use-case-title">Email Newsletters</h3>
+        <p class="use-case-desc">Include <strong>mailto email links</strong> in your HTML newsletters so subscribers can reply or reach out with one click.</p>
+      </div>
+      <div class="use-case-card reveal">
+        <div class="use-case-emoji">📄</div>
+        <h3 class="use-case-title">Resumes & Portfolios</h3>
+        <p class="use-case-desc">Add a clickable <strong>mailto hyperlink</strong> to your online resume or portfolio so employers can contact you effortlessly.</p>
+      </div>
+      <div class="use-case-card reveal">
+        <div class="use-case-emoji">📣</div>
+        <h3 class="use-case-title">Marketing Campaigns</h3>
+        <p class="use-case-desc">Build <strong>mailto links with subject</strong> lines tailored to campaign names so you can track where inquiries come from.</p>
+      </div>
+      <div class="use-case-card reveal">
+        <div class="use-case-emoji">🏫</div>
+        <h3 class="use-case-title">Education</h3>
+        <p class="use-case-desc">Students learning <strong>email link HTML code</strong> can use our tool to understand the mailto URL format and how HTML anchors work.</p>
+      </div>
+      <div class="use-case-card reveal">
+        <div class="use-case-emoji">🌐</div>
+        <h3 class="use-case-title">Agencies & Freelancers</h3>
+        <p class="use-case-desc">Speed up client websites by generating <strong>mailto HTML</strong> quickly without switching away from your design workflow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEO CONTENT ===== -->
+<section id="seo-content" aria-labelledby="seo-title">
+  <div class="container">
+    <div class="seo-grid">
+      <div class="seo-text reveal">
+        <span class="section-tag">HTML Guide</span>
+        <h2 class="section-title" id="seo-title">Everything About the HTML Mailto Tag</h2>
+
+        <h3>What Is a Mailto Link in HTML?</h3>
+        <p>A <strong>mailto link</strong> (also called a <strong>mail to link</strong> or <strong>mailto hyperlink</strong>) is a standard HTML anchor tag that uses the <code>mailto:</code> URI scheme. When a user clicks an <strong>email link in HTML</strong>, their default email application opens automatically with the To field pre-filled — and optionally the subject, CC, BCC, and body too.</p>
+        <p>The basic <strong>HTML email hyperlink</strong> syntax is: <code>&lt;a href="mailto:you@example.com"&gt;Contact Us&lt;/a&gt;</code>. This is supported in every browser, on every device, and in every HTML environment.</p>
+
+        <h3 style="margin-top:24px">Mailto Link with Subject</h3>
+        <p>Adding a subject line to your <strong>mailto URL</strong> is one of the most useful tricks. It helps the recipient immediately understand the purpose of the email, and it pre-fills the subject field in the email client. You can also add <code>&amp;body=</code> to pre-fill the message body, making it even easier for visitors to reach out.</p>
+        <ul>
+          <li>Use <code>?subject=</code> to pre-fill the subject line</li>
+          <li>Use <code>&amp;cc=</code> to add a CC recipient</li>
+          <li>Use <code>&amp;bcc=</code> to add a BCC recipient</li>
+          <li>Use <code>&amp;body=</code> to pre-fill the email body</li>
+          <li>All parameter values must be URL-encoded</li>
+        </ul>
+
+        <h3 style="margin-top:24px">How to Create a Mailto Link</h3>
+        <p>You can <strong>create a mailto link</strong> manually or use our free <strong>mailto link generator</strong>. The generator handles all URL encoding automatically — spaces become <code>%20</code>, special characters are properly escaped, and the resulting <strong>hyperlink for email HTML</strong> is ready to paste into your project.</p>
+        <p>Our tool produces the complete <strong>email link HTML code</strong> with the anchor tag, href attribute, and display text — everything you need to <strong>make a mailto link</strong> that works perfectly on desktop and mobile.</p>
+      </div>
+      <div class="seo-visual reveal">
+        <div class="seo-visual-title">Mailto URL Structure</div>
+        <code>
+<span class="kw">&lt;a</span> <span class="str">href</span>=<span class="txt">"</span><span class="cmt">mailto:</span><span class="str">to@email.com</span>
+   <span class="cmt">?subject=</span><span class="txt">Hello%20World</span>
+   <span class="cmt">&amp;cc=</span><span class="txt">cc@email.com</span>
+   <span class="cmt">&amp;bcc=</span><span class="txt">bcc@email.com</span>
+   <span class="cmt">&amp;body=</span><span class="txt">Hi%20there"</span><span class="kw">&gt;</span>
+
+  <span class="txt">Email Us</span>
+
+<span class="kw">&lt;/a&gt;</span>
+
+<span class="cmt">───────────────────────────────</span>
+<span class="cmt">Parameter Reference:</span>
+<span class="cmt">  mailto:  → recipient email</span>
+<span class="cmt">  subject= → email subject line</span>
+<span class="cmt">  cc=      → carbon copy</span>
+<span class="cmt">  bcc=     → blind carbon copy</span>
+<span class="cmt">  body=    → pre-filled message</span>
+<span class="cmt">───────────────────────────────</span>
+<span class="cmt">All values must be URL-encoded:</span>
+<span class="txt">Space → %20</span>
+<span class="txt">@     → %40</span>
+<span class="txt">&amp;     → %26</span>
+<span class="txt">?     → %3F</span>
+<span class="txt">,     → %2C</span>
+        </code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know about mailto links and our generator.</p>
+    </div>
+    <div class="faq-grid" id="faqGrid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="cta" aria-label="Generate your first mailto link">
+  <div class="cta-bg"></div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <h2 class="cta-title">Ready to <em>Create</em> Your Mailto Link?</h2>
+      <p class="cta-subtitle">Try the fastest, free <strong>mailto link generator</strong>. Enter your email below for an instant HTML email hyperlink — no signup, no limits.</p>
+      <div class="cta-form">
+        <input type="email" id="ctaEmail" class="cta-input" placeholder="your@email.com" aria-label="Email address for quick mailto generation"/>
+        <button id="ctaGenBtn" class="cta-btn" type="button">Generate Free</button>
+      </div>
+      <div id="ctaResult" class="cta-result"></div>
+      <p class="cta-note">100% free · No account required · Works instantly</p>
+    </div>
+  </div>
+</section>
+
+<!-- Scroll to Top -->
+<button id="scrollTop" aria-label="Scroll to top" title="Back to top">↑</button>
+
+<!-- Toast Notification -->
+<div id="toast" role="alert" aria-live="polite">Copied to clipboard!</div>
+
+<!-- JS Components -->
+<script src="header.js"></script>
+<script src="footer.js"></script>
+
+<script>
+/* ===== DATA ===== */
+const examples = [
+  {
+    title: 'Simple Email Link',
+    tag: 'Basic',
+    code: '<a href="mailto:hello@company.com">Email Us</a>',
+    url: 'mailto:hello@company.com',
+    preview: '<a href="mailto:hello@company.com">Email Us</a>'
+  },
+  {
+    title: 'Email Link with Subject',
+    tag: 'With Subject',
+    code: '<a href="mailto:support@company.com?subject=Support%20Request">Get Support</a>',
+    url: 'mailto:support@company.com?subject=Support%20Request',
+    preview: '<a href="mailto:support@company.com?subject=Support%20Request">Get Support</a>'
+  },
+  {
+    title: 'Full Mailto with Body',
+    tag: 'Full Options',
+    code: '<a href="mailto:sales@company.com?subject=Sales%20Inquiry&body=Hi%2C%20I%27d%20like%20to%20know%20more.">Contact Sales</a>',
+    url: 'mailto:sales@company.com?subject=Sales%20Inquiry&body=Hi%2C%20I%27d%20like%20to%20know%20more.',
+    preview: '<a href="mailto:sales@company.com?subject=Sales%20Inquiry&body=Hi%2C%20I%27d%20like%20to%20know%20more.">Contact Sales</a>'
+  },
+  {
+    title: 'Email with CC & BCC',
+    tag: 'CC & BCC',
+    code: '<a href="mailto:info@company.com?subject=Hello&cc=manager@company.com&bcc=log@company.com">Send Email</a>',
+    url: 'mailto:info@company.com?subject=Hello&cc=manager@company.com&bcc=log@company.com',
+    preview: '<a href="mailto:info@company.com?subject=Hello&cc=manager@company.com&bcc=log@company.com">Send Email</a>'
+  }
+];
+
+const faqs = [
+  {
+    q: 'What is a mailto link in HTML?',
+    a: 'A mailto link is an HTML anchor element using the <code>mailto:</code> URI scheme. When clicked, it opens the user\'s default email client with pre-filled fields. The basic syntax is <code>&lt;a href="mailto:email@example.com"&gt;Link Text&lt;/a&gt;</code>.'
+  },
+  {
+    q: 'How do I create a mailto link with a subject?',
+    a: 'Add a <code>?subject=</code> parameter after the email address: <code>mailto:you@example.com?subject=Hello</code>. Our generator handles this automatically and URL-encodes spaces and special characters for you.'
+  },
+  {
+    q: 'What does URL encoding mean for mailto links?',
+    a: 'URL encoding replaces special characters with percent-encoded equivalents so the mailto URL is valid. For example, spaces become <code>%20</code>, the & symbol becomes <code>%26</code>. Our tool encodes all values automatically.'
+  },
+  {
+    q: 'Can I add CC and BCC to a mailto link?',
+    a: 'Yes. Use <code>&amp;cc=email@example.com</code> and <code>&amp;bcc=email@example.com</code> parameters in your mailto URL. You can specify multiple addresses separated by commas. Our tool has dedicated fields for CC and BCC.'
+  },
+  {
+    q: 'Does a mailto link work on mobile devices?',
+    a: 'Absolutely. On iOS, clicking a mailto link opens the Mail app. On Android, it opens Gmail or the default mail app. This makes mailto hyperlinks ideal for mobile-first websites and contact pages.'
+  },
+  {
+    q: 'Is this mailto link generator really free?',
+    a: 'Yes, 100% free with no limits and no account required. You can generate as many mailto links as you need. All processing happens in your browser — no data is sent to any server.'
+  },
+  {
+    q: 'What is the difference between a mailto URL and mailto HTML?',
+    a: 'A mailto URL is the raw link value like <code>mailto:you@example.com?subject=Hi</code>. The mailto HTML is the complete anchor tag with the href attribute and display text, like <code>&lt;a href="mailto:..."&gt;Contact&lt;/a&gt;</code>. Our generator provides both.'
+  },
+  {
+    q: 'Why is my mailto link not working?',
+    a: 'Common issues include: no default email client configured in the browser, special characters not being URL-encoded, or the email address containing typos. Use our tool to generate correctly encoded mailto links and always test before publishing.'
+  }
+];
+
+/* ===== RENDER EXAMPLES ===== */
+function renderExamples() {
+  const grid = document.getElementById('examplesGrid');
+  grid.innerHTML = examples.map((ex, i) => `
+    <div class="example-card reveal">
+      <div class="example-card-head">
+        <span class="example-title">${ex.title}</span>
+        <span class="example-tag">${ex.tag}</span>
+      </div>
+      <div class="example-code"><code>${escHtml(ex.code)}</code></div>
+      <div class="example-preview">Preview: ${ex.preview}</div>
+      <button class="example-copy-btn" onclick="copySingle('${escHtml(ex.code).replace(/'/g,"\\'")}', this)">📋 Copy HTML Code</button>
+    </div>
+  `).join('');
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function copySingle(text, btn) {
+  const decoded = text.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&').replace(/&quot;/g,'"');
+  navigator.clipboard.writeText(decoded).then(() => {
+    btn.textContent = '✓ Copied!';
+    btn.style.color = 'var(--teal-dark)';
+    showToast('Code copied!');
+    setTimeout(() => { btn.textContent = '📋 Copy HTML Code'; btn.style.color = ''; }, 2000);
+  });
+}
+
+/* ===== RENDER FAQ ===== */
+function renderFaq() {
+  const grid = document.getElementById('faqGrid');
+  grid.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFaq(${i})" aria-expanded="false" aria-controls="faq-answer-${i}">
+        ${f.q}
+        <span class="faq-chevron">▾</span>
+      </button>
+      <div class="faq-answer" id="faq-answer-${i}" role="region">
+        <div class="faq-answer-inner">${f.a}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleFaq(i) {
+  const item = document.getElementById('faq-' + i);
+  const btn = item.querySelector('.faq-question');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+/* ===== GENERATOR LOGIC ===== */
+let generatedHtml = '';
+let generatedUrl = '';
+
+function buildMailtoUrl(to, subject, cc, bcc, body) {
+  let url = 'mailto:' + to;
+  const params = [];
+  if (subject) params.push('subject=' + encodeURIComponent(subject));
+  if (cc) params.push('cc=' + encodeURIComponent(cc));
+  if (bcc) params.push('bcc=' + encodeURIComponent(bcc));
+  if (body) params.push('body=' + encodeURIComponent(body));
+  if (params.length) url += '?' + params.join('&');
+  return url;
+}
+
+function buildHtmlLink(url, text) {
+  return `<a href="${url}">${text || 'Email Us'}</a>`;
+}
+
+function generateLink() {
+  const to = document.getElementById('toEmail').value.trim();
+  const text = document.getElementById('linkText').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const cc = document.getElementById('ccEmail').value.trim();
+  const bcc = document.getElementById('bccEmail').value.trim();
+  const body = document.getElementById('bodyText').value.trim();
+  const validation = document.getElementById('emailValidation');
+
+  if (!to) {
+    validation.className = 'validation-msg error';
+    validation.textContent = 'Please enter a recipient email address.';
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) {
+    validation.className = 'validation-msg error';
+    validation.textContent = 'Please enter a valid email address.';
+    return;
+  }
+  validation.className = 'validation-msg success';
+  validation.textContent = '✓ Valid email address';
+
+  generatedUrl = buildMailtoUrl(to, subject, cc, bcc, body);
+  generatedHtml = buildHtmlLink(generatedUrl, text || 'Email Us');
+
+  document.getElementById('htmlCode').innerHTML = '<span style="color:#FF8C5A">&lt;a</span> <span style="color:#FFD166">href</span><span style="color:#E8F4FD">=</span><span style="color:#06D6A0">"' + escHtml(generatedUrl) + '"</span><span style="color:#FF8C5A">&gt;</span><span style="color:#E8F4FD">' + escHtml(text || 'Email Us') + '</span><span style="color:#FF8C5A">&lt;/a&gt;</span>';
+  document.getElementById('copyHtmlBtn').style.display = 'block';
+  document.getElementById('urlCode').textContent = generatedUrl;
+  document.getElementById('previewBox').innerHTML = generatedHtml;
+  document.getElementById('previewBox').querySelector('a').style.color = 'var(--orange)';
+  document.getElementById('previewBox').querySelector('a').style.textDecoration = 'underline';
+  document.getElementById('previewBox').querySelector('a').style.fontWeight = '600';
+
+  showToast('Mailto link generated!');
+}
+
+function copyOutput(type) {
+  if (!generatedHtml && !generatedUrl) { showToast('Generate a link first!'); return; }
+  const text = type === 'html' ? generatedHtml : generatedUrl;
+  navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard!'));
+}
+
+document.getElementById('copyHtmlBig').addEventListener('click', () => {
+  if (!generatedHtml) { showToast('Generate a link first!'); return; }
+  navigator.clipboard.writeText(generatedHtml).then(() => {
+    animateCopyBtn(document.getElementById('copyHtmlBig'), 'Copied!');
+    showToast('HTML code copied!');
+  });
+});
+
+document.getElementById('copyUrlBig').addEventListener('click', () => {
+  if (!generatedUrl) { showToast('Generate a link first!'); return; }
+  navigator.clipboard.writeText(generatedUrl).then(() => {
+    animateCopyBtn(document.getElementById('copyUrlBig'), 'Copied!');
+    showToast('Mailto URL copied!');
+  });
+});
+
+function animateCopyBtn(btn, msg) {
+  const orig = btn.innerHTML;
+  btn.innerHTML = '✓ ' + msg;
+  btn.classList.add('copied');
+  setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2000);
+}
+
+document.getElementById('generateBtn').addEventListener('click', generateLink);
+
+// Enter key triggers generate
+['toEmail','linkText','subject','ccEmail','bccEmail'].forEach(id => {
+  document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') generateLink(); });
+});
+
+// Char counter
+document.getElementById('linkText').addEventListener('input', function() {
+  document.getElementById('charCount').textContent = this.value.length + '/80';
+});
+
+// Reset
+document.getElementById('resetBtn').addEventListener('click', () => {
+  ['toEmail','linkText','subject','ccEmail','bccEmail','bodyText'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('charCount').textContent = '0/80';
+  document.getElementById('emailValidation').className = 'validation-msg';
+  document.getElementById('emailValidation').textContent = '';
+  document.getElementById('htmlCode').innerHTML = '<span style="color:rgba(232,244,253,0.3);font-style:italic">// Your mailto HTML code will appear here...</span>';
+  document.getElementById('urlCode').textContent = 'Your mailto URL will appear here...';
+  document.getElementById('urlCode').style.fontStyle = 'italic';
+  document.getElementById('previewBox').innerHTML = '<span class="preview-placeholder">Your live email link preview will appear here</span>';
+  document.getElementById('copyHtmlBtn').style.display = 'none';
+  generatedHtml = ''; generatedUrl = '';
+});
+
+/* ===== CTA QUICK GEN ===== */
+document.getElementById('ctaGenBtn').addEventListener('click', () => {
+  const email = document.getElementById('ctaEmail').value.trim();
+  const result = document.getElementById('ctaResult');
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    result.style.color = '#FF8C8C';
+    result.textContent = '⚠ Please enter a valid email address.';
+    result.classList.add('show');
+    return;
+  }
+  const link = `<a href="mailto:${email}">Email Us</a>`;
+  result.style.color = 'var(--yellow)';
+  result.textContent = link;
+  result.classList.add('show');
+  navigator.clipboard.writeText(link).then(() => showToast('Link copied to clipboard!'));
+});
+
+/* ===== TOAST ===== */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+/* ===== SCROLL TO TOP ===== */
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ===== INTERSECTION OBSERVER ===== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (i * 0.05) + 's';
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
+
+/* ===== INIT ===== */
+renderExamples();
+renderFaq();
+initReveal();
+
+// Re-observe dynamically rendered elements
+setTimeout(initReveal, 100);
+</script>
+</body>
+</html>
