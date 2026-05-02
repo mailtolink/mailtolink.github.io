@@ -38,22 +38,22 @@ function createFooter() {
         <div class="footer-col">
           <h3 class="footer-heading">Tools</h3>
           <ul class="footer-links" role="list">
-            <li><a href="#generator">Mailto Link Generator</a></li>
-            <li><a href="#generator">Create Mailto Link</a></li>
-            <li><a href="#generator">Email Link HTML Code</a></li>
-            <li><a href="#examples">Mailto URL Examples</a></li>
-            <li><a href="#generator">HTML Email Hyperlink</a></li>
+            <li><a href="/#generator">Mailto Link Generator</a></li>
+            <li><a href="/#generator">Create Mailto Link</a></li>
+            <li><a href="/#generator">Email Link HTML Code</a></li>
+            <li><a href="/#examples">Mailto URL Examples</a></li>
+            <li><a href="/generator">HTML Email Hyperlink</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h3 class="footer-heading">Learn</h3>
           <ul class="footer-links" role="list">
-            <li><a href="#how-it-works">How Mailto Links Work</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#use-cases">Use Cases</a></li>
-            <li><a href="#seo-content">HTML Mailto Tag Guide</a></li>
+            <li><a href="/#how-it-works">How Mailto Links Work</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/#use-cases">Use Cases</a></li>
+            <li><a href="/#seo-content">HTML Mailto Tag Guide</a></li>
           </ul>
         </div>
 
@@ -69,6 +69,16 @@ function createFooter() {
           </div>
         </div>
       </div>
+
+      <div class="footer-col">
+          <h3 class="footer-heading">Learn</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Use</a></li>            
+          </ul>
+        </div>
 
       <div class="footer-bottom">
         <p class="footer-copy">&copy; ${new Date().getFullYear()} <a href="/">mailtolink.github.io</a> &mdash; Free Mailto Link Generator. All rights reserved.</p>
