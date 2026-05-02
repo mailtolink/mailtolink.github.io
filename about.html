@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – Mailto Link Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <style>
+    :root {
+      --orange: #FF6B35; --navy: #1A1F3A; --cream: #FFF8F0; --text-dark: #1A1F3A;
+      --text-mid: #4A5268; --border: #E8EDF5; --radius-lg: 24px; --radius-md: 16px;
+    }
+    body { font-family: 'Cabinet Grotesk', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.7; margin: 0; padding: 0; }
+    .container { max-width: 1000px; margin: 100px auto; padding: 0 24px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-text h1 { font-size: 3rem; font-weight: 900; margin-bottom: 24px; letter-spacing: -0.03em; line-height: 1.1; }
+    .about-text h1 em { color: var(--orange); font-family: 'Fraunces', serif; font-style: italic; }
+    .about-text p { font-size: 1.1rem; color: var(--text-mid); margin-bottom: 20px; }
+    .expert-card { background: white; padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: 0 8px 32px rgba(26,31,58,0.05); }
+    .expert-tag { color: var(--orange); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 12px; }
+    .expert-name { font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; }
+    .expert-desc { font-size: 0.95rem; color: var(--text-mid); }
+    .back-link { display: inline-block; margin-bottom: 32px; color: var(--orange); font-weight: 700; text-decoration: none; }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Tool</a>
+    <div class="about-grid">
+      <div class="about-text">
+        <h1>Simplifying Web <em>Development</em></h1>
+        <p>Mailto Link Generator was built to solve a simple but recurring problem: creating perfectly encoded HTML email links shouldn't be a manual chore.</p>
+        <p>Our mission is to provide developers, marketers, and business owners with a lightweight, privacy-focused utility that generates clean, ready-to-use code in seconds.</p>
+      </div>
+      <div class="expert-card">
+        <span class="expert-tag">The Creator</span>
+        <div class="expert-name">Mustafa Bukhari</div>
+        <p class="expert-desc">I am a professional <strong>Web Developer and SEO Expert</strong> dedicated to building high-performance web tools. With a focus on technical SEO and user-centric design, I create utilities that help professionals streamline their digital workflows.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
